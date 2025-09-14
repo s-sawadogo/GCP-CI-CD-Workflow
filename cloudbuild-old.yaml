@@ -1,13 +1,13 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Build Docker Image'
-  args: ['build', '-t', 'gcr.io/end-to-end-mlops-on-gcp/cicd-vertex-bikeshare-model:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/end-to-end-mlops-on-gcp/cicd-vertex-bikeshare-model', '.']
 
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Push Docker Image To GCR'
-  args: ['push', 'gcr.io/end-to-end-mlops-on-gcp/cicd-vertex-bikeshare-model:$COMMIT_SHA']
+  args: ['push', 'gcr.io/end-to-end-mlops-on-gcp/cicd-vertex-bikeshare-model']
 
-- name: 'gcr.io/end-to-end-mlops-on-gcp/cicd-vertex-bikeshare-model:$COMMIT_SHA'
+- name: 'gcr.io/end-to-end-mlops-on-gcp/cicd-vertex-bikeshare-model'
   id: 'Execute Tests'
   entrypoint: 'bash'
   args:
