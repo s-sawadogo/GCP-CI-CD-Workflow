@@ -25,7 +25,7 @@ def preprocess_data(df):
     df = df.drop(columns=['instant', 'dteday', 'year'])
     cols = ['season', 'month', 'hour', 'holiday', 'weekday', 'workingday', 'weather']
     for col in cols:
-        df[col] = df[col].astype('category')
+        df[col] = df[col].astype('category')#jhjhjhj
     df['count'] = np.log(df['count'])
     df_oh = df.copy()
     for col in cols:
@@ -47,6 +47,7 @@ def train_model(model_name, x_train, y_train):
 
     pipeline = make_pipeline(model)
     pipeline.fit(x_train, y_train)
+
     return pipeline
 
 def save_model_artifact(model_name, pipeline):
