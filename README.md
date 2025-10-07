@@ -7,9 +7,16 @@
 
 **The CI/CD process uses GitHub commits as triggers. Once a new commit has been pushed to the GitHub repository, it automaticly trigger the ML workflow in GCP as shown below.**
 
+## Demonstration
+
+**Step 1**
+![](assets/gcp_ci_cd_1.gif)
+
+**Step 2**
+![](assets/gcp_ci_cd_2.gif)
 
 
-## 🏗️ Key steps
+## 🏗️ Key steps of the workflow
 1. **Building a Docker Image**
 2. **Pushing the Docker Image To Google Container Registry (GCR)**
 3. **Executing unit testing (PyTest)**
@@ -19,7 +26,7 @@
 7. **Creating a model Endpoint**
 8. **Deploying the  Model to the created Vertex AI Endpoint**
 
-### The entire worflow is shown below :
+### Find below some snipets of the worflow:
 
 ![](assets/ci-cd-workflow.png)
 
